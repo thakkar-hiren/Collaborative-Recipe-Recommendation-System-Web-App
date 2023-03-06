@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Ingredients</title>
+    <style>
+      h1 {
+        text-transform: capitalize;
+        text-align: center;
+      }
+      table {
+        margin: 0 auto; /* center table */
+        border-collapse: collapse;
+        background-color: #f2f2f2;
+        font-family: Arial, sans-serif;
+        font-size: 16px;
+        width: 50%;
+        max-width: 200px;
+        text-align: center;
+      }
+
+      th, td {
+        border: 1px solid #ddd;
+        padding: 12px;
+        text-align: left;
+      }
+      tr{
+        text-transform: capitalize;
+      }
+      th {
+        background-color: #4CAF50;
+        color: white;
+      }
+
+      body {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Ingredients for {{ recipe }}</h1>
+    <table>
+      <thead>
+        <tr>
+          <th>Ingredient</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for ingredient in ingredients.split(',') %}
+          <tr>
+            <td>{{ ingredient.strip() }}</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    <br>
+  </body>
+</html>
